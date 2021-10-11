@@ -130,7 +130,7 @@ $(window).on('load', function() {
           .bindPopup("<b>" + point['Name'] + '</b><br>' +
           (point['Image'] ? ('<img src="' + point['Image'] + '"><br>') : '') +
           point['Description']+ '</b><br>' +
-          point['Location'] + point['Country'] + '</b><br>' + 'Date Started: ' +
+          point['Location'] + ', ' + point['Country'] + '</b><br>' + 'Date Started: ' +
           point['Date Started']+ '</b><br>' + 'Date Ended: ' +
           point['Date Ended']);
 
@@ -576,7 +576,7 @@ $(window).on('load', function() {
 
     layer.bindPopup(info);
 
-    
+
     // Add polygon label if needed
     if (!allTextLabels[polygon]) { allTextLabels.push([]) }
 
@@ -643,7 +643,7 @@ $(window).on('load', function() {
       var geocoder = L.Control.geocoder({
         expand: 'click',
         position: getSetting('_mapSearch'),
-        
+
         geocoder: L.Control.Geocoder.nominatim({
           geocodingQueryParams: {
             viewbox: '',  // by default, viewbox is empty
@@ -752,7 +752,7 @@ $(window).on('load', function() {
       var gaScript = document.createElement('script');
       gaScript.setAttribute('src','https://www.googletagmanager.com/gtag/js?id=' + ga);
       document.head.appendChild(gaScript);
-  
+
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
@@ -826,7 +826,7 @@ $(window).on('load', function() {
           if (p[index]['Description'] && p[index]['Description'] != '') {
             line.bindPopup(p[index]['Description']);
           }
-           
+
           if (p[index]['Location'] && p[index]['Location'] != '') {
             line.bindPopup(p[index]['Location']);
           }
@@ -1032,7 +1032,7 @@ $(window).on('load', function() {
                       parse(polylines)
                     )
                   } else {
-                    
+
                     // Fetch another polygons sheet
                     $.getJSON(apiUrl + spreadsheetId + '/values/' + polygonSheets.shift() + '?key=' + googleApiKey, function(data) {
                       createPolygonSettings( parse([data]) )
@@ -1047,7 +1047,7 @@ $(window).on('load', function() {
                 fetchPolygonsSheet( polygonSheets )
 
               })
-              
+
             }
           )
 
@@ -1065,27 +1065,27 @@ $(window).on('load', function() {
         var parse = function(s) {
           return Papa.parse(s[0], {header: true}).data
         }
-      
+
         $.when(
           $.get('./csv/Options.csv'),
           $.get('./csv/Points.csv'),
           $.get('./csv/Polylines.csv')
         ).done(function(options, points, polylines) {
-      
+
           function loadPolygonCsv(n) {
-      
+
             $.get('./csv/Polygons' + (n === 0 ? '' : n) + '.csv', function(data) {
               createPolygonSettings( parse([data]) )
               loadPolygonCsv(n+1)
-            }).fail(function() { 
-              // No more sheets to load, initialize the map  
+            }).fail(function() {
+              // No more sheets to load, initialize the map
               onMapDataLoad( parse(options), parse(points), parse(polylines) )
             })
-      
+
           }
-      
+
           loadPolygonCsv(0)
-      
+
         })
 
        }
