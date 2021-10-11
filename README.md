@@ -4,7 +4,7 @@ Customize Leaflet maps with a linked Google Sheets template or CSV files and Geo
 ![Preview](preview.jpg)
 
 ## Live links (replace with your own)
-- Leaflet Map https://incrediblemop.github.io/diptrain/
+- Leaflet Map https://diplotraining.github.io/diptrain/
 - Google Sheets template https://docs.google.com/spreadsheets/d/1yir1oyKis1fqd0910KhKZBvZUkxIVNXbtTeUfKCx5VA/edit#gid=0
 
 ## Create your own
