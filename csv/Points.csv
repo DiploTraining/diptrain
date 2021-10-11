@@ -1,4 +1,4 @@
-Group,Marker Icon,Marker Color,Icon Color,Custom Size,Name,Image,Description,City,Country,Latitude,Longitude,Source,Date Started,Date Ended
+Group,Marker Icon,Marker Color,Icon Color,Custom Size,Name,Image,Description,Location,Country,Latitude,Longitude,Source,Date Started,Date Ended
 ,,,,,ENFOM,,École nationale de la France d'outre-mer,Paris,France,48.84385337,2.3364422,,01/01/1934,01/01/1958
 ,,,,,IHEOM,,Institut des hautes études d'outre-mer,Paris,France,48.84385337,2.3364422,,01/01/1959,01/01/1966
 ,,,,,IIAP,,Institut international d'administration publique,Paris,France,48.84385337,2.3364422,,01/01/1966,01/01/2002
