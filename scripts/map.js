@@ -130,7 +130,7 @@ $(window).on('load', function() {
           .bindPopup("<b>" + point['Name'] + '</b><br>' +
           (point['Image'] ? ('<img src="' + point['Image'] + '"><br>') : '') +
           point['Description']+ '</b><br>' +
-          point['Location']+ '</b><br>' + 'Date Started: ' +
+          point['City']+ ', ' + point['Country'] + '</b><br>' + 'Date Started: ' +
           point['Date Started']+ '</b><br>' + 'Date Ended: ' +
           point['Date Ended']);
 
