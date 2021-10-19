@@ -8,16 +8,6 @@ $(window).on('load', function() {
   var completePoints = false;
   var completePolygons = false;
   var completePolylines = false;
-  
-  //Create a marker layer (in the example done via a GeoJSON FeatureCollection)
-  var testlayer = {};
-  var sliderControl = L.control.sliderControl({position: "topright", layer: testlayer});
-
-//Make sure to add the slider to the map ;-)
-  map.addControl(sliderControl);
-
-//And initialize the slider
-  sliderControl.startSlider();
 
   /**
    * Returns an Awesome marker with specified parameters
